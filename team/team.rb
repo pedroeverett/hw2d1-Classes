@@ -24,4 +24,8 @@ class Golfteam
   def new_coach_name(new_name)
     return @coach = new_name
   end
+
+  def add_player(new_player)
+    return @players << new_player
+  end
 end
