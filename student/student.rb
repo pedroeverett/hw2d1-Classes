@@ -1,10 +1,11 @@
 class Student
-  attr_reader :name, :cohort
-  attr_writer :name, :cohort
+  attr_reader :name, :cohort, :language
+  attr_writer :name, :cohort, :language
 
-  def initialize(name, cohort)
+  def initialize(name, cohort, language)
     @name = name
     @cohort = cohort
+    @language = language
   end
 
   def student_name
@@ -25,5 +26,10 @@ class Student
 
   def return_talk
     return "I can talk!"
+  end
+
+  def say_favourite_language(language)
+    @language = language
+    return "Ruby"
   end
 end

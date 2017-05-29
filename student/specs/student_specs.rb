@@ -3,7 +3,7 @@ require_relative('../student.rb')
 
 class TestStudent < Minitest::Test
   def setup
-    @students = Student.new("Pedro", 13)
+    @students = Student.new("Pedro", 13, "Java")
   end
 
   def test_name
@@ -25,6 +25,11 @@ class TestStudent < Minitest::Test
   end
 
   def test_return_talk
-    assert_equal("I can talk!",@students.return_talk)
+    assert_equal("I can talk!", @students.return_talk)
+  end
+
+  def test_say_favourite_language  
+    @students.say_favourite_language("r")
+    assert_equal("Ruby", @students.say_favourite_language)
   end
 end
