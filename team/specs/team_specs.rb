@@ -17,4 +17,9 @@ class Testgolfteam < Minitest::Test
   def test_coach
     assert_equal("Duffy", @team.coach_name)
   end
+
+  def test_new_coach_name
+    @team.new_coach_name("Bunny")
+    assert_equal("Bunny", @team.coach_name)
+  end
 end
