@@ -29,7 +29,11 @@ class Student
   end
 
   def say_favourite_language(language)
-    @language = language
-    return "Ruby"
+    return @language = language
   end
+
+  def favourite_language
+    return "I Love #{@language}"
+  end
+
 end

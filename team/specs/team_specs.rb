@@ -3,7 +3,7 @@ require_relative('../team.rb')
 
 class Testgolfteam < Minitest::Test
   def setup
-    @team = Golfteam.new("golfies",["John", "Zed", "Delta"], "Duffy")
+    @team = Golfteam.new("golfies",["John", "Zed", "Delta"], "Duffy",0)
   end
 
   def test_team_name
@@ -26,5 +26,15 @@ class Testgolfteam < Minitest::Test
   def test_add_player
     @team.add_player("Vat")
     assert_equal(4, @team.players_names.count)
+  end
+
+  def test_find_player_by_name
+    @team.find_player_by_name("Zed")
+    assert_equal("Zed", @team.find_player_by_name)
+  end
+  
+  def test_add_points
+    @team.add_points("Win")
+    assert_equal(5, @team.points)
   end
 end
