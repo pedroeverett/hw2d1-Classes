@@ -31,14 +31,21 @@ class Golfteam
     return @players << new_player
   end
 
-  def find_player_by_name(new_player)
-    for plays in @players
-      if plays == new_player
-        return plays
-      end
+  # def find_player_by_name(new_player)
+  #   for plays in @players
+  #     if plays == new_player
+  #       return plays
+  #     end
+  #   end
+  # end
+
+  def check_player(player)
+    if @players.include?(player)
+      return true
+    else 
+      return false
     end
   end
-
   def add_points(xx)
     @points += 5 if (xx == "Win")
     #@points -= 3 if (xx == "Loss")
@@ -48,7 +55,4 @@ class Golfteam
   def points
   return @points
   end
-
-      
-
 end

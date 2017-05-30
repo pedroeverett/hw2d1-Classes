@@ -28,11 +28,15 @@ class Testgolfteam < Minitest::Test
     assert_equal(4, @team.players_names.count)
   end
 
-  def test_find_player_by_name
-    @team.find_player_by_name("Zed")
-    assert_equal("Zed", @team.find_player_by_name)
-  end
+  # def test_find_player_by_name
+  #   @team.find_player_by_name("Zed")
+  #   assert_equal("Zed", @team.find_player_by_name)
+  # end
   
+  def test_check_player
+    assert_equal(true, @team.check_player("Zed"))
+  end
+
   def test_add_points
     @team.add_points("Win")
     assert_equal(5, @team.points)
